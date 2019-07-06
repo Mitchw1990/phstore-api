@@ -9,9 +9,10 @@ import org.springframework.context.annotation.Bean
 class Application {
 
     @Bean
-    fun cmdRunner(): CommandLineRunner = geodeRunner()
+    fun cmdRunner(): CommandLineRunner = startUpCommand()
 }
 
 fun main(args: Array<String>) {
+
     runApplication<Application>(*args)
 }

@@ -9,8 +9,8 @@ plugins {
     kotlin("plugin.spring") version "1.2.71"
 }
 
-group = "com.bitprobe.phstore"
 version = "1.0"
+group = "com.bitprobe.phstore"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 configurations {
@@ -20,7 +20,9 @@ configurations {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
+    maven("https://repo.spring.io/libs-milestone")
 }
 
 extra["springCloudVersion"] = "Greenwich.SR1"
@@ -28,7 +30,7 @@ extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
 
-    implementation("org.apache.geode:geode-core:1.9.0")
+    implementation("com.github.kilianB:JImageHash:3.0.0")
 
     //kotlin dependencies
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -36,11 +38,11 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     //boot dependencies
-//    implementation("org.springframework.cloud:spring-cloud-starter-aws")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.springframework.geode:spring-geode-starter:1.1.0.M3")
 
     //test dependencies
     testImplementation("org.springframework.boot:spring-boot-starter-test")

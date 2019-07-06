@@ -1,0 +1,3 @@
+server.port: 8081
+#spring.data.gemfire.pool.locators:
+#  - mitchs-imac.attlocal.net[10334]
