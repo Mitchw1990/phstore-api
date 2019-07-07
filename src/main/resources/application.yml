@@ -1,3 +1,7 @@
-server.port: 8081
-#spring.data.gemfire.pool.locators:
-#  - mitchs-imac.attlocal.net[10334]
+spring:
+  application.name: phstore-api
+  cloud.gcp:
+    project-id: bitprobe-mw
+    datastore:
+      namespace: phstore-api
+      emulator.enabled: false

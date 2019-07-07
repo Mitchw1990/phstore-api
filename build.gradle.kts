@@ -23,6 +23,7 @@ repositories {
     jcenter()
     mavenCentral()
     maven("https://repo.spring.io/libs-milestone")
+    maven("https://maven-central.storage.googleapis.com")
 }
 
 extra["springCloudVersion"] = "Greenwich.SR1"
@@ -31,6 +32,12 @@ extra["snippetsDir"] = file("build/generated-snippets")
 dependencies {
 
     implementation("com.github.kilianB:JImageHash:3.0.0")
+    implementation("com.google.firebase:firebase-admin:6.8.1")
+    implementation("com.google.api-client:google-api-client:1.25.0")
+
+    //google cloud dependencies
+    implementation("org.springframework.cloud:spring-cloud-gcp-starter")
+    implementation("org.springframework.cloud:spring-cloud-gcp-starter-data-datastore")
 
     //kotlin dependencies
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -42,7 +49,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springframework.geode:spring-geode-starter:1.1.0.M3")
 
     //test dependencies
     testImplementation("org.springframework.boot:spring-boot-starter-test")

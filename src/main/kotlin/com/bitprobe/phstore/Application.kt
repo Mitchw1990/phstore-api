@@ -6,13 +6,8 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-class Application {
-
-    @Bean
-    fun cmdRunner(): CommandLineRunner = startUpCommand()
-}
+class Application
 
 fun main(args: Array<String>) {
-
     runApplication<Application>(*args)
 }

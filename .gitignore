@@ -6,6 +6,7 @@ build/
 !**/src/test/**
 *.log
 *.dat
+.DS_Store
 
 ### STS ###
 .apt_generated
@@ -32,3 +33,5 @@ out/
 
 ### VS Code ###
 .vscode/
+*.jpg
+*.jpeg
