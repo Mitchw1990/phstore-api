@@ -70,7 +70,7 @@ tasks {
     task("deploy", Exec::class) {
         dependsOn("build", "dockerBuild", "dockerPush")
         commandLine("gcloud", "beta", "run", "deploy", "phstore-api",
-                "--image", "gcr.io/bitprobe-mw/phstore-api", "--memory", "512M",
+                "--image", "gcr.io/bitprobe-mw/phstore-api", "--memory", "1024M",
                 "--platform", "managed", "--region", "us-central1", "--allow-unauthenticated"
         )
     }
