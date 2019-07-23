@@ -68,7 +68,7 @@ tasks.withType<KotlinCompile> {
 
 tasks {
     task("deploy", Exec::class) {
-        dependsOn("build", "dockerBuild")
+        dependsOn("build", "dockerBuild", "dockerPush")
         commandLine("gcloud", "beta", "run", "deploy", "phstore-api",
                 "--image", "gcr.io/bitprobe-mw/phstore-api", "--memory", "512M",
                 "--platform", "managed", "--region", "us-central1", "--allow-unauthenticated"
