@@ -29,8 +29,11 @@ extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
 
+
     implementation("com.github.kilianB:JImageHash:3.0.0")
     implementation("com.google.firebase:firebase-admin:6.8.1")
+    implementation("io.github.openfeign.form:feign-form:3.8.0")
+    implementation("io.github.openfeign:feign-httpclient:10.2.3")
     implementation("com.google.api-client:google-api-client:1.25.0")
 
     //google cloud dependencies
@@ -47,6 +50,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 
     //test dependencies
     testImplementation("org.springframework.boot:spring-boot-starter-test")

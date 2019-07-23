@@ -6,7 +6,5 @@ import org.springframework.stereotype.Service
 @Service
 class HashService {
 
-    public fun createHashes(image: ByteArray): HashRecord  {
-        return HashRecord("","","","");
-    }
+
 }

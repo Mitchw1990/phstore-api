@@ -39,8 +39,9 @@ import org.springframework.core.io.ClassPathResource
 
 fun startUpCommand() = CommandLineRunner {
 
-    val img0 = ClassPathResource("images/9.jpg").file
-    val img1 = ClassPathResource("images/6 copy.jpg").file
+    val img0 = ClassPathResource("images/steve.jpg").file
+//    val img1 = ClassPathResource("images/jesse.png").file
+    val img1 = ClassPathResource("images/jesse2.png").file
 
     listOf(
             AverageHash(64),
@@ -51,7 +52,7 @@ fun startUpCommand() = CommandLineRunner {
         val hash1 = it.hash(img0)
         val hash2 = it.hash(img1)
 
-        println("$it score = ${hash1.normalizedHammingDistanceFast(hash2)}")
+        println("$it score = ${hash1.normalizedHammingDistance(hash2)}")
     }
 }
 
