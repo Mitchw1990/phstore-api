@@ -7,7 +7,7 @@ import com.github.kilianB.hashAlgorithms.PerceptiveHash
 import org.springframework.boot.CommandLineRunner
 import org.springframework.core.io.ClassPathResource
 
-//aHash (also called Average Hash or Mean Hash). This approach crushes the image into a grayscale 8x8 image and sets the 64 bits in the hash based on whether the pixel's value is greater than the average color for the image.
+//aHash (also called Average Hash or Mean Hash). This approach crunches the image into a grayscale 8x8 image and sets the 64 bits in the hash based on whether the pixel's value is greater than the average color for the image.
 //pHash (also called "Perceptive Hash"). This algorithm is similar to aHash but use a discrete cosine transform (DCT) and compares based on frequencies rather than color values.
 //While aHash focuses on average values and pHash evaluates frequency patterns, dHash tracks gradients.
 
@@ -17,7 +17,7 @@ import org.springframework.core.io.ClassPathResource
 //Results (64 bits for used in all 3)
 
 //aHash results:
-//In general, aHash is fast but not very accurate.
+//In general, aHash is fast but as accurate.
 //aHash generates a huge number of false positives. It matched all of the expected images, but also matched about 10x more false-positives.
 //pHash results:
 //This algorithm definitely performed the best with regards to accuracy. No false positives, no false negatives, and every match has a score of 2 or less

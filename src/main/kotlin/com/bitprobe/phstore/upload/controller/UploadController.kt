@@ -3,19 +3,20 @@ package com.bitprobe.phstore.upload.controller
 import com.bitprobe.phstore.upload.model.UploadResponse
 import com.bitprobe.phstore.upload.service.UploadService
 import org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestPart
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 
-@RestController("/api/v1/upload")
+@RestController
+@RequestMapping("/api/v1/upload")
+@CrossOrigin(origins = ["http://localhost:3000"], allowedHeaders = ["*"], methods = [RequestMethod.POST])
 class UploadController(private val uploadService: UploadService) {
+
 
     @PostMapping(consumes = [MULTIPART_FORM_DATA_VALUE])
     fun upload(@RequestPart name: String,
                @RequestPart type: String,
-               @RequestPart file: ByteArray): UploadResponse {
+               @RequestPart image: ByteArray): UploadResponse {
 
-        return uploadService.upload(name, type, file)
+        return uploadService.upload(name, type, image)
     }
 }

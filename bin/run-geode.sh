@@ -1,1 +1,0 @@
-docker run -p 1099:1099 -p 7070:7070 -p 10334:10334 -it apachegeode/geode

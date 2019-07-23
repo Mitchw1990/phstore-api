@@ -35,3 +35,4 @@ out/
 .vscode/
 *.jpg
 *.jpeg
+/bitprobe-482adb943afd.json

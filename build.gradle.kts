@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("idea")
-    id("org.asciidoctor.convert") version "1.5.3"
     id("org.springframework.boot") version "2.1.6.RELEASE"
     id("io.spring.dependency-management") version "1.0.7.RELEASE"
     kotlin("jvm") version "1.2.71"
@@ -23,7 +22,6 @@ repositories {
     jcenter()
     mavenCentral()
     maven("https://repo.spring.io/libs-milestone")
-    maven("https://maven-central.storage.googleapis.com")
 }
 
 extra["springCloudVersion"] = "Greenwich.SR1"
@@ -36,7 +34,7 @@ dependencies {
     implementation("com.google.api-client:google-api-client:1.25.0")
 
     //google cloud dependencies
-    implementation("org.springframework.cloud:spring-cloud-gcp-starter")
+    implementation("org.springframework.cloud:spring-cloud-gcp-starter-storage")
     implementation("org.springframework.cloud:spring-cloud-gcp-starter-data-datastore")
 
     //kotlin dependencies
@@ -65,5 +63,23 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"
+    }
+}
+
+tasks {
+    task("deploy", Exec::class) {
+        dependsOn("build", "dockerBuild")
+        commandLine("gcloud", "beta", "run", "deploy", "phstore-api",
+                "--image", "gcr.io/bitprobe-mw/phstore-api", "--memory", "512M",
+                "--platform", "managed", "--region", "us-central1", "--allow-unauthenticated"
+        )
+    }
+
+    task("dockerBuild", Exec::class) {
+        commandLine("docker", "build", "-t", "gcr.io/bitprobe-mw/phstore-api:latest", ".")
+    }
+
+    task("dockerPush", Exec::class) {
+        commandLine("docker", "push", "gcr.io/bitprobe-mw/phstore-api")
     }
 }

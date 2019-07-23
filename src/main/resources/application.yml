@@ -5,3 +5,10 @@ spring:
     datastore:
       namespace: phstore-api
       emulator.enabled: false
+  servlet.multipart.max-file-size: 1024MB
+dev.uris:
+  storage: https://firebasestorage.googleapis.com/v0/b/bitprobe-mw.appspot.com/o/image2
+management.endpoints.web.exposure.include: '*'
+---
+spring.profiles: cloud
+server.port: ${PORT}

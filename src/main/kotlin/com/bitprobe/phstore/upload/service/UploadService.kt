@@ -7,9 +7,16 @@ import org.springframework.stereotype.Service
 @Service
 class UploadService {
 
-    public fun upload(name: String, type: String, file: ByteArray): UploadResponse {
+    public fun upload(name: String, type: String, image: ByteArray): UploadResponse {
 
-        val hashRecord = HashRecord(pHash = "pHash", dHash = "dHash", aHash = "aHash", dHashPreFiler = "dHashPreFiler")
+        println("received file: $name")
+
+        val hashRecord = HashRecord(
+                pHash = "pHash",
+                dHash = "dHash",
+                aHash = "aHash",
+                dHashFastFilter = "dHashPreFilter"
+        )
 
         return UploadResponse("url", "message", hashRecord)
     }
