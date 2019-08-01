@@ -1,19 +1,7 @@
 spring:
   application.name: phstore-api
-  cloud.gcp:
-    project-id: bitprobe-mw
-    datastore:
-      namespace: phstore-api
-      emulator.enabled: false
-  servlet.multipart.max-file-size: 1024MB
-dev.uris:
-  storage: https://firebasestorage.googleapis.com/v0/b/bitprobe-mw.appspot.com/o/image2
-  fireStore: https://firestore.googleapis.com
-  client: http://localhost:3000
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:49161/XE
+    username: PH
+    password: PH
 management.endpoints.web.exposure.include: '*'
-
----
-spring.profiles: cloud
-dev.uris:
-  client: https://bitprobe-mw.web.app
-server.port: ${PORT}

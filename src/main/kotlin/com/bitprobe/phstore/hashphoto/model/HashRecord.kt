@@ -1,4 +1,4 @@
-package com.bitprobe.phstore.hash.model
+package com.bitprobe.phstore.hashphoto.model
 
 data class HashRecord(
         val imageLink: String,

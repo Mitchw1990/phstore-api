@@ -52,6 +52,8 @@ fun startUpCommand() = CommandLineRunner {
         val hash1 = it.hash(img0)
         val hash2 = it.hash(img1)
 
+        println(hash1.hashValue)
+
         println("$it score = ${hash1.normalizedHammingDistance(hash2)}")
     }
 }
@@ -60,7 +62,7 @@ private fun Hash.toHexString(): String {
     return hashValue.toString(16);
 }
 
-//fun main(args: Array<String>) {
-//    val commandLineRunner = startUpCommand()
-//    commandLineRunner.run()
-//}
+fun main(args: Array<String>) {
+    val commandLineRunner = startUpCommand()
+    commandLineRunner.run()
+}
