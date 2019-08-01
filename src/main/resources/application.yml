@@ -10,7 +10,10 @@ dev.uris:
   storage: https://firebasestorage.googleapis.com/v0/b/bitprobe-mw.appspot.com/o/image2
   client: http://localhost:3000
 management.endpoints.web.exposure.include: '*'
-
+server:
+  port: 8087
+  address: mwpc.attlocal.net
+  http2.enabled: true
 ---
 spring.profiles: cloud
 dev.uris:
