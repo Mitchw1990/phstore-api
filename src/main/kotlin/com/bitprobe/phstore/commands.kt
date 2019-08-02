@@ -41,7 +41,7 @@ fun startUpCommand() = CommandLineRunner {
 
     val img0 = ClassPathResource("images/steve.jpg").file
 //    val img1 = ClassPathResource("images/jesse.png").file
-    val img1 = ClassPathResource("images/jesse2.png").file
+    val img1 = ClassPathResource("").file
 
     listOf(
             AverageHash(64),

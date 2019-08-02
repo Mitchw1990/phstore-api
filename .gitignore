@@ -33,6 +33,6 @@ out/
 
 ### VS Code ###
 .vscode/
-*.jpg
-*.jpeg
+#*.jpg
+#*.jpeg
 /bitprobe-482adb943afd.json
