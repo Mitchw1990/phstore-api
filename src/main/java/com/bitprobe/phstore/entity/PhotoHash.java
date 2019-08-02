@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import oracle.sql.NUMBER;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -27,10 +28,10 @@ public class PhotoHash {
     @GeneratedValue(generator = "photoHashSequence", strategy = SEQUENCE)
     private Long id;
     private Long photoId;
-    private BigInteger pHash;
-    private BigInteger aHash;
-    private BigInteger dHash64;
-    private BigInteger dHash16;
+    private byte[] pHash;
+    private byte[] aHash;
+    private byte[] dHash64;
+    private byte[] dHash16;
 
     @CreationTimestamp
     private Date createdDt;

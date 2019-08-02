@@ -1,3 +1,7 @@
+-- docker run --name ph-db -d -p 49160:22 -p 49161:1521 christophesurmont/oracle-xe-11g
+-- docker exec -ti ph-db /bin/bash
+-- sqlplus system/oracle
+
 conn sys/oracle as sysdba;
 create user PH identified by PH;
 grant unlimited tablespace to PH;

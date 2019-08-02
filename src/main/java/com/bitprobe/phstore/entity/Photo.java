@@ -25,6 +25,7 @@ public class Photo {
     @GeneratedValue(generator = "photoHashSequence", strategy = SEQUENCE)
     private Long id;
     private byte[] photoData;
+    private String md5Hash;
 
     @CreationTimestamp
     private Date createdDt;

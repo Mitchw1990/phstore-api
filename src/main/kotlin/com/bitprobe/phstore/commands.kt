@@ -62,7 +62,7 @@ private fun Hash.toHexString(): String {
     return hashValue.toString(16);
 }
 
-fun main(args: Array<String>) {
-    val commandLineRunner = startUpCommand()
-    commandLineRunner.run()
-}
+//fun main(args: Array<String>) {
+//    val commandLineRunner = startUpCommand()
+//    commandLineRunner.run()
+//}

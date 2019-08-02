@@ -22,6 +22,7 @@ dependencies {
 
     compile("com.oracle:ojdbc6:11.2.0.3")
 
+    implementation("org.projectlombok:lombok:1.16.16")
     implementation("commons-io:commons-io:2.6")
     implementation("com.github.kilianB:JImageHash:3.0.0")
 
@@ -35,10 +36,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("org.projectlombok:lombok:1.16.16")
 
     //test dependencies
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    annotationProcessor("org.projectlombok:lombok:1.16.16")
 }
 
 tasks.withType<KotlinCompile> {
